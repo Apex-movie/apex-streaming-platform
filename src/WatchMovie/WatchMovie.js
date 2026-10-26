@@ -3,7 +3,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import "./WatchMovie.css";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://apex-streaming-backend.onrender.com";
 const API = `${API_URL}/api`;
 
 function WatchMovie() {

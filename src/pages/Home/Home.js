@@ -7,7 +7,7 @@ import TitileCards from '../../components/TitileCards/TitileCards';
 import Footer from '../../components/Footer/Footer';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 
-const API = 'http://localhost:5000/api';
+const API = 'https://apex-streaming-backend.onrender.com/api';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -164,7 +164,7 @@ const Home = () => {
       return posterUrl;
     }
 
-    return `http://localhost:5000${
+    return `https://apex-streaming-backend.onrender.com${
       posterUrl.startsWith('/') ? '' : '/'
     }${posterUrl}`;
   };
@@ -188,7 +188,7 @@ const Home = () => {
             src={
               currentMovie.bannerUrl.startsWith('http')
                 ? currentMovie.bannerUrl
-                : `http://localhost:5000${
+                : `https://apex-streaming-backend.onrender.com${
                     currentMovie.bannerUrl.startsWith('/') ? '' : '/'
                   }${currentMovie.bannerUrl}`
             }

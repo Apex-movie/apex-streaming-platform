@@ -4,7 +4,7 @@ import './TitileCards.css';
 import { useNavigate } from 'react-router-dom';
 import FavoriteButton from '../FavoriteButton/FavoriteButton';
 
-const API = 'http://localhost:5000/api';
+const API = 'https://apex-streaming-backend.onrender.com/api';
 
 const TitileCards = ({ title, searchQuery }) => {
   const navigate = useNavigate();
@@ -215,7 +215,7 @@ const TitileCards = ({ title, searchQuery }) => {
                         movie.posterUrl
                           ? movie.posterUrl.startsWith('http')
                             ? movie.posterUrl
-                            : `http://localhost:5000${
+                            : `https://apex-streaming-backend.onrender.com${
                                 movie.posterUrl.startsWith('/')
                                   ? ''
                                   : '/'

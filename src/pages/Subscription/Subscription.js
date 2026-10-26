@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Subscription.css";
 
-const API = "http://localhost:5000/api/subscriptions";
+const API = "https://apex-streaming-backend.onrender.com/api/subscriptions";
 
 async function readApiResponse(response) {
   const text = await response.text();

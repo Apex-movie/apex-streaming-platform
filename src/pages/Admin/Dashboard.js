@@ -39,7 +39,7 @@ const Dashboard = () => {
   // FETCH MOVIES
   const fetchMovies = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/movies');
+      const response = await fetch('https://apex-streaming-backend.onrender.com/api/movies');
       const data = await response.json();
 
       if (response.ok) {
@@ -56,7 +56,7 @@ const Dashboard = () => {
       const token = localStorage.getItem('token');
 
       const response = await fetch(
-        'http://localhost:5000/api/users/total',
+        'https://apex-streaming-backend.onrender.com/api/users/total',
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -80,7 +80,7 @@ const Dashboard = () => {
       const token = localStorage.getItem('token');
 
       const response = await fetch(
-        'http://localhost:5000/api/subscriptions/stats',
+        'https://apex-streaming-backend.onrender.com/api/subscriptions/stats',
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -141,7 +141,7 @@ const Dashboard = () => {
       const token = localStorage.getItem('token');
 
       const response = await fetch(
-        'http://localhost:5000/api/users/change-password',
+        'https://apex-streaming-backend.onrender.com/api/users/change-password',
         {
           method: 'PUT',
           headers: {
@@ -215,7 +215,7 @@ const Dashboard = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/movies/${movieId}`,
+        `https://apex-streaming-backend.onrender.com/api/movies/${movieId}`,
         {
           method: 'DELETE',
           headers: {
@@ -460,7 +460,7 @@ const Dashboard = () => {
               filteredMovies.map((movie) => (
                 <div className="movie-admin-card" key={movie._id}>
                   <img
-                    src={`http://localhost:5000${movie.posterUrl}`}
+                    src={`https://apex-streaming-backend.onrender.com${movie.posterUrl}`}
                     alt={movie.title}
                     className="movie-poster"
                   />

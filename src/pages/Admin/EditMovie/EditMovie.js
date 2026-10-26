@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import './EditMovie.css';
 import { useParams, useNavigate } from 'react-router-dom';
 
-const API_URL = 'http://localhost:5000';
+const API_URL = 'https://apex-streaming-backend.onrender.com';
 
 const EditMovie = () => {
   const { id } = useParams();

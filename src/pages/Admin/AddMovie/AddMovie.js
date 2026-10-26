@@ -150,7 +150,7 @@ const AddMovie = () => {
       data.append('video', videoFile)
 
       const response = await fetch(
-        'http://localhost:5000/api/movies',
+        'https://apex-streaming-backend.onrender.com/api/movies',
         {
           method: 'POST',
           headers: {

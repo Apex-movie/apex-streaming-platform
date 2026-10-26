@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import FavoriteButton from "../../components/FavoriteButton/FavoriteButton";
 import "./Favorites.css";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://apex-streaming-backend.onrender.com";
 
 export default function Favorites() {
   const navigate = useNavigate();

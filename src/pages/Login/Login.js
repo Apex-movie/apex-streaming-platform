@@ -144,7 +144,7 @@ const Login = () => {
       try {
 
         const response = await fetch(
-          "http://localhost:5000/api/auth/register",
+          "https://apex-streaming-backend.onrender.com/api/auth/register",
           {
             method: "POST",
 
@@ -214,7 +214,7 @@ const Login = () => {
     try {
 
       const response = await fetch(
-        "http://localhost:5000/api/auth/login",
+        "https://apex-streaming-backend.onrender.com/api/auth/login",
         {
           method: "POST",
 

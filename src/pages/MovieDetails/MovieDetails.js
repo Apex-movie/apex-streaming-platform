@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import './MovieDetails.css';
 import { useNavigate, useParams } from 'react-router-dom';
 
-const API_URL = 'http://localhost:5000';
+const API_URL = 'https://apex-streaming-backend.onrender.com';
 
 const MovieDetails = () => {
   const { id } = useParams();

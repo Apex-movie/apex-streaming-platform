@@ -41,7 +41,8 @@ export default function AdminAIChat() {
       const token = localStorage.getItem('token');
 
       const response = await fetch(
-        'http://localhost:5000/api/admin-ai/ask',
+        // 'https://apex-streaming-backend.onrender.com/api/admin-ai/ask',
+        'https://apex-streaming-backend.onrender.com/api/admin-ai/ask',
         {
           method: 'POST',
           headers: {

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import "./FavoriteButton.css";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://apex-streaming-backend.onrender.com/api";
 
 export default function FavoriteButton({ movieId }) {
   const [isFavorite, setIsFavorite] = useState(false);
