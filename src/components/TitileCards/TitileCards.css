@@ -1,0 +1,405 @@
+
+/* =========================================
+   APEX - MOVIE TITLE CARDS
+   ========================================= */
+
+.title-section {
+  width: 100%;
+  margin-top: 30px;
+  padding-bottom: 30px;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+/* Section heading */
+.title-section .title-section-heading {
+  margin: 0 0 16px 6%;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* Horizontal movie list */
+.title-cards {
+  display: flex;
+  align-items: stretch;
+  gap: 18px;
+  width: 100%;
+  padding: 8px 6% 18px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.title-cards::-webkit-scrollbar {
+  display: none;
+}
+
+/* =========================================
+   BASE MOVIE CARD
+   ========================================= */
+
+.title-cards .card {
+  position: relative;
+  flex: 0 0 220px;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  color: #fff;
+  background: #151515;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.title-cards .card:hover {
+  transform: translateY(-4px);
+  z-index: 2;
+}
+
+.title-cards .card:focus-visible {
+  outline: 2px solid #e50914;
+  outline-offset: 3px;
+}
+
+/* Poster */
+.card-poster-wrapper {
+  position: relative;
+  width: 100%;
+  height: 125px;
+  overflow: hidden;
+  background: #222;
+}
+
+.card-poster-wrapper img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-poster-wrapper img {
+  transform: scale(1.05);
+}
+
+/* =========================================
+   FAVORITE HEART BUTTON
+   ========================================= */
+
+.card-poster-wrapper .favorite-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.78);
+  color: #fff;
+
+  font-size: 24px;
+  line-height: 1;
+
+  cursor: pointer;
+  opacity: 1;
+  visibility: visible;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.card-poster-wrapper .favorite-button:hover {
+  background: #e50914;
+  color: #fff;
+  transform: scale(1.08);
+}
+
+.card-poster-wrapper .favorite-button.active {
+  color: #ff2d55;
+  background: rgba(0, 0, 0, 0.88);
+}
+
+.card-poster-wrapper .favorite-button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Movie details */
+.card-content {
+  padding: 10px;
+}
+
+.card-content h3 {
+  margin: 0 0 6px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.card-content .card-description {
+  margin: 0;
+  color: #b8b8b8;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.card-rating {
+  margin-top: 9px;
+  color: #f5c518;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.card-rating .rating-count {
+  color: #aaa;
+  font-weight: 400;
+}
+
+/* =========================================
+   FREE MOVIE
+   ========================================= */
+
+.title-cards .card.free-card {
+  border-color: #292929;
+  background: #151515;
+}
+
+.free-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 1;
+  margin: 0;
+  padding: 5px 8px;
+  border-radius: 4px;
+  background: #202020;
+  color: #eee;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+}
+
+/* =========================================
+   PREMIUM MOVIE - RED HIGHLIGHT
+   ========================================= */
+
+.title-cards .card.premium-card {
+  border: 1px solid #e50914;
+  background: linear-gradient(
+    180deg,
+    #35090d 0%,
+    #1b1011 40%,
+    #111 100%
+  );
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.18);
+}
+
+.title-cards .card.premium-card:hover {
+  border-color: #ff454d;
+  box-shadow: 0 0 22px rgba(229, 9, 20, 0.45);
+  transform: translateY(-5px);
+}
+
+/* Premium badge on poster */
+.card-poster-wrapper .premium-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 2;
+  display: inline-block;
+  margin: 0;
+  padding: 7px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  background: linear-gradient(135deg, #ff3038, #b20710);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Premium label below description */
+.card-content .premium-card-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 9px 10px;
+  border: 1px solid rgba(229, 9, 20, 0.3);
+  border-radius: 5px;
+  background: rgba(229, 9, 20, 0.13);
+  color: #ff454d;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.premium-card-label .premium-lock {
+  margin: 0;
+  color: #fff;
+  font-size: 15px;
+}
+
+/* Premium unlocked */
+.premium-unlocked {
+  background: #146c43;
+  color: #fff;
+  border: 1px solid #36c77b;
+}
+
+.unlocked-label {
+  color: #63e6a1;
+}
+
+/* Loading and error messages */
+.movies-message {
+  margin: 12px 6%;
+  color: #ddd;
+  font-size: 14px;
+}
+
+.movies-message.error {
+  color: #ff6565;
+}
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 1000px) {
+  .title-section {
+    margin-top: 25px;
+  }
+
+  .title-section .title-section-heading {
+    margin-left: 5%;
+    font-size: 20px;
+  }
+
+  .title-cards {
+    gap: 15px;
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+
+  .title-cards .card {
+    flex-basis: 190px;
+  }
+
+  .card-poster-wrapper {
+    height: 108px;
+  }
+
+  .card-content h3 {
+    font-size: 15px;
+  }
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+  .title-section {
+    margin-top: 20px;
+  }
+
+  .title-section .title-section-heading {
+    margin-left: 4%;
+    margin-bottom: 12px;
+    font-size: 18px;
+  }
+
+  .title-cards {
+    gap: 12px;
+    padding-right: 4%;
+    padding-left: 4%;
+  }
+
+  .title-cards .card {
+    flex-basis: 155px;
+  }
+
+  .card-poster-wrapper {
+    height: 90px;
+  }
+
+  .card-content {
+    padding: 8px;
+  }
+
+  .card-content h3 {
+    font-size: 14px;
+  }
+
+  .card-content .card-description {
+    font-size: 11px;
+  }
+
+  .card-rating {
+    font-size: 11px;
+  }
+
+  .card-poster-wrapper .premium-badge {
+    top: 5px;
+    left: 5px;
+    padding: 5px 6px;
+    font-size: 9px;
+  }
+
+  .card-poster-wrapper .favorite-button {
+    top: 5px;
+    right: 5px;
+    width: 32px;
+    height: 32px;
+    font-size: 21px;
+  }
+
+  .card-content .premium-card-label {
+    padding: 7px;
+    font-size: 9px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 400px) {
+  .title-cards .card {
+    flex-basis: 140px;
+  }
+
+  .card-poster-wrapper {
+    height: 82px;
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .title-cards .card,
+  .card-poster-wrapper img,
+  .card-poster-wrapper .favorite-button {
+    transition: none;
+  }
+}

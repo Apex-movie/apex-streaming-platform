@@ -1,0 +1,432 @@
+
+/* =========================
+   EDIT MOVIE PAGE
+   FULL WIDTH LAYOUT
+========================= */
+
+.edit-movie-page {
+  min-height: 100vh;
+  width: 100%;
+  margin-left: 0;
+  padding: 45px 50px;
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(229, 9, 20, 0.12),
+      transparent 35%
+    ),
+    #0b0b0b;
+
+  color: #fff;
+  overflow-wrap: break-word;
+}
+
+/* PAGE TITLE */
+
+.edit-movie-page h1 {
+  margin: 0 0 35px;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* FORM */
+
+.edit-movie-page form {
+  width: 100%;
+  max-width: 1210px;
+  padding: 32px;
+  box-sizing: border-box;
+
+  background: rgba(31, 31, 31, 0.96);
+  border: 1px solid #292929;
+  border-radius: 12px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* LABELS */
+
+.edit-movie-page form label {
+  display: block;
+  margin-top: 5px;
+  color: #ddd;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* INPUTS, TEXTAREA AND SELECT */
+
+.edit-movie-page input,
+.edit-movie-page textarea,
+.edit-movie-page select {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  padding: 14px 16px;
+  background: #151515;
+  border: 1px solid #3a3a3a;
+  border-radius: 7px;
+
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* PLACEHOLDERS */
+
+.edit-movie-page input::placeholder,
+.edit-movie-page textarea::placeholder {
+  color: #777;
+}
+
+/* SELECT */
+
+.edit-movie-page select {
+  cursor: pointer;
+  appearance: auto;
+}
+
+.edit-movie-page select option {
+  background: #151515;
+  color: #fff;
+}
+
+/* FOCUS */
+
+.edit-movie-page input:focus,
+.edit-movie-page textarea:focus,
+.edit-movie-page select:focus {
+  border-color: #e50914;
+  background: #191919;
+  box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.12);
+}
+
+/* TEXTAREA */
+
+.edit-movie-page textarea {
+  min-height: 140px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+/* NUMBER INPUT */
+
+.edit-movie-page input[type="number"] {
+  appearance: textfield;
+}
+
+/* FILE INPUT */
+
+.edit-movie-page input[type="file"] {
+  padding: 12px;
+  cursor: pointer;
+}
+
+.edit-movie-page input[type="file"]::file-selector-button {
+  padding: 8px 12px;
+  margin-right: 12px;
+  background: #292929;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* FREE / PREMIUM SELECTOR */
+
+.edit-movie-page select[name="isPremium"] {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  background: #181818;
+  border: 1px solid #444;
+  border-radius: 7px;
+  color: #fff;
+}
+
+.edit-movie-page .premium-help-text {
+  margin: 0 0 18px;
+  color: #aaa;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* CURRENT POSTER */
+
+.edit-movie-page .edit-current-poster {
+  display: block;
+  width: 90px;
+  max-width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border: 1px solid #3a3a3a;
+  border-radius: 5px;
+}
+
+/* CURRENT BANNER */
+
+.edit-movie-page .edit-current-banner {
+  display: block;
+  width: 320px;
+  max-width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border: 1px solid #3a3a3a;
+  border-radius: 5px;
+}
+
+/* NEW MEDIA PREVIEW */
+
+.edit-movie-page .new-image-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 100%;
+  margin-top: 5px;
+}
+
+.edit-movie-page .new-image-preview span {
+  color: #aaa;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* NEW POSTER */
+
+.edit-movie-page .edit-new-poster {
+  display: block;
+  width: 90px;
+  max-width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border: 1px solid #e50914;
+  border-radius: 5px;
+}
+
+/* NEW BANNER */
+
+.edit-movie-page .edit-new-banner {
+  display: block;
+  width: 320px;
+  max-width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border: 1px solid #e50914;
+  border-radius: 5px;
+}
+
+/* VIDEO */
+
+.edit-movie-page video {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+  background: #000;
+}
+
+/* UPDATE BUTTON */
+
+.edit-movie-page form button[type="submit"] {
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px 20px;
+
+  background: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.edit-movie-page form button[type="submit"]:hover:not(:disabled) {
+  background: #f6121d;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(229, 9, 20, 0.25);
+}
+
+.edit-movie-page form button[type="submit"]:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* BACK BUTTON */
+
+.edit-movie-page .back-btn {
+  margin-top: 22px;
+  padding: 11px 20px;
+
+  background: #292929;
+  color: #ddd;
+  border: 1px solid #3a3a3a;
+  border-radius: 6px;
+
+  font-size: 14px;
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.edit-movie-page .back-btn:hover {
+  background: #3a3a3a;
+  color: #fff;
+}
+
+/* SUCCESS MESSAGE */
+
+.edit-movie-page .success-message {
+  width: 100%;
+  max-width: 1210px;
+  box-sizing: border-box;
+  padding: 13px 16px;
+  margin: 0 0 20px;
+
+  background: rgba(76, 175, 80, 0.1);
+  border: 1px solid rgba(76, 175, 80, 0.35);
+  border-radius: 6px;
+
+  color: #66bb6a;
+  font-size: 14px;
+}
+
+/* ERROR MESSAGE */
+
+.edit-movie-page .error-message {
+  width: 100%;
+  max-width: 1210px;
+  box-sizing: border-box;
+  padding: 13px 16px;
+  margin: 0 0 20px;
+
+  background: rgba(229, 9, 20, 0.1);
+  border: 1px solid rgba(229, 9, 20, 0.35);
+  border-radius: 6px;
+
+  color: #ff5a62;
+  font-size: 14px;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .edit-movie-page {
+    width: 100%;
+    margin-left: 0;
+    padding: 35px 25px;
+  }
+
+  .edit-movie-page form {
+    max-width: 100%;
+    padding: 26px;
+  }
+
+  .edit-movie-page h1 {
+    font-size: 30px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .edit-movie-page {
+    width: 100%;
+    margin-left: 0;
+    padding: 30px 20px;
+  }
+
+  .edit-movie-page h1 {
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+
+  .edit-movie-page form {
+    padding: 22px;
+    border-radius: 10px;
+  }
+
+  .edit-movie-page .edit-current-banner,
+  .edit-movie-page .edit-new-banner {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    aspect-ratio: 16 / 5;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .edit-movie-page {
+    width: 100%;
+    margin-left: 0;
+    padding: 25px 15px;
+  }
+
+  .edit-movie-page h1 {
+    font-size: 24px;
+    margin-bottom: 22px;
+  }
+
+  .edit-movie-page form {
+    padding: 18px;
+    gap: 15px;
+  }
+
+  .edit-movie-page form label {
+    font-size: 13px;
+  }
+
+  .edit-movie-page input,
+  .edit-movie-page textarea,
+  .edit-movie-page select {
+    padding: 13px;
+    font-size: 14px;
+  }
+
+  .edit-movie-page .edit-current-poster,
+  .edit-movie-page .edit-new-poster {
+    width: 80px;
+    height: 115px;
+  }
+
+  .edit-movie-page .edit-current-banner,
+  .edit-movie-page .edit-new-banner {
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+    aspect-ratio: 16 / 5;
+  }
+
+  .edit-movie-page .back-btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,611 @@
+
+/* ==============================
+   APEX WATCH PAGE
+   Complete Premium Dark Theme
+================================ */
+
+.watch-page {
+  min-height: 100vh;
+  background: #080808;
+  color: #f5f5f5;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0 5%;
+  box-sizing: border-box;
+}
+
+/* ===== HEADER NAVIGATION ===== */
+
+.watch-header {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #242424;
+}
+
+.watch-back-btn {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  background: #171717;
+  color: #fff;
+  font-size: 23px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.watch-back-btn:hover {
+  background: #e50914;
+  border-color: #e50914;
+}
+
+.watch-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: auto;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  cursor: pointer;
+}
+
+.watch-brand-icon,
+.watch-bottom-icon {
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 7px;
+  background: #e50914;
+  color: #fff;
+  font-size: 23px;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.watch-live-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #aaa;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.watch-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #e50914;
+  box-shadow: 0 0 10px #e5091480;
+}
+
+/* ===== MAIN PAGE ===== */
+
+.watch-main {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 27px 0 30px;
+}
+
+/* ===== CINEMATIC MOVIE HEADING ===== */
+
+.watch-heading {
+  position: relative;
+  isolation: isolate;
+  margin-bottom: 20px;
+  padding: 25px 28px;
+  overflow: hidden;
+  border: 1px solid #292929;
+  border-radius: 12px;
+  background:
+    linear-gradient(110deg, #211011 0%, #151010 40%, #0c0c0c 100%);
+}
+
+.watch-heading::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  background: #e50914;
+}
+
+.watch-heading::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -100px;
+  right: -30px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: #e50914;
+  opacity: 0.09;
+  filter: blur(55px);
+  pointer-events: none;
+}
+
+.watch-heading .watch-eyebrow {
+  margin: 0 0 10px;
+  color: #ff525b;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.watch-heading h1 {
+  max-width: 950px;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -1px;
+  overflow-wrap: anywhere;
+}
+
+.watch-movie-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 16px;
+  color: #c0c0c0;
+  font-size: 12px;
+}
+
+.watch-movie-meta > span:not(.watch-premium-tag) {
+  padding: 6px 10px;
+  border: 1px solid #383838;
+  border-radius: 5px;
+  background: #ffffff08;
+}
+
+.watch-premium-tag {
+  padding: 6px 10px;
+  border: 1px solid #79252a;
+  border-radius: 5px;
+  background: #e5091418;
+  color: #ff6971;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+/* ===== VIDEO PLAYER ===== */
+
+.watch-player-card {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #303030;
+  border-radius: 12px;
+  background: #000;
+  box-shadow: 0 18px 50px #0009;
+}
+
+.watch-video {
+  display: block;
+  width: 100%;
+  max-height: 75vh;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  object-fit: contain;
+}
+
+/* ===== VIDEO ERROR ===== */
+
+.watch-error {
+  min-height: 350px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.watch-error-icon {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #e5091466;
+  border-radius: 50%;
+  background: #e509141a;
+  color: #e50914;
+  font-size: 25px;
+}
+
+.watch-error h2 {
+  margin: 18px 0 5px;
+}
+
+.watch-error p {
+  max-width: 420px;
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.watch-home-btn {
+  margin-top: 12px;
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 6px;
+  background: #e50914;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.watch-home-btn:hover {
+  background: #bd0811;
+}
+
+.watch-load-message {
+  margin-top: 14px;
+  color: #ff858b;
+  font-size: 13px;
+}
+
+/* ===== MOVIE DESCRIPTION ===== */
+
+.watch-description {
+  padding: 25px 0;
+  border-bottom: 1px solid #262626;
+}
+
+.watch-description h2 {
+  margin: 0 0 10px;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.watch-description p {
+  max-width: 850px;
+  margin: 0;
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* ===== RECOMMENDED MOVIES ===== */
+
+.watch-recommendations {
+  padding: 36px 0 15px;
+}
+
+.watch-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 15px;
+  margin-bottom: 21px;
+}
+
+.watch-section-heading .watch-eyebrow {
+  margin: 0 0 7px;
+  color: #e50914;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+
+.watch-section-heading h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(22px, 3vw, 29px);
+  font-weight: 800;
+}
+
+.watch-view-all {
+  flex-shrink: 0;
+  border: 0;
+  background: transparent;
+  color: #ccc;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.watch-view-all span {
+  margin-left: 4px;
+  color: #e50914;
+  font-size: 18px;
+}
+
+.watch-view-all:hover {
+  color: #fff;
+}
+
+.watch-muted {
+  padding: 10px 0;
+  color: #888;
+  font-size: 14px;
+}
+
+/* ===== MOVIE GRID ===== */
+
+.watch-movie-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 22px 15px;
+}
+
+.watch-movie-card {
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.watch-poster-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 2 / 3;
+  border: 1px solid #242424;
+  border-radius: 8px;
+  background: #171717;
+}
+
+.watch-poster-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.watch-movie-card:hover .watch-poster-wrap img,
+.watch-movie-card:focus-visible .watch-poster-wrap img {
+  transform: scale(1.06);
+  opacity: 0.68;
+}
+
+.watch-card-premium {
+  position: absolute;
+  top: 9px;
+  left: 8px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  background: #e50914;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+.watch-card-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border: 1px solid #ffffffaa;
+  border-radius: 50%;
+  background: #080808c9;
+  color: #fff;
+  font-size: 17px;
+  opacity: 0;
+  transform: translate(-50%, -40%);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.watch-movie-card:hover .watch-card-play,
+.watch-movie-card:focus-visible .watch-card-play {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.watch-card-info {
+  padding: 10px 2px 4px;
+}
+
+.watch-card-info h3 {
+  overflow: hidden;
+  margin: 0;
+  color: #f5f5f5;
+  font-size: 14px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.watch-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 7px;
+  color: #888;
+  font-size: 11px;
+}
+
+/* ===== FOOTER ===== */
+
+.watch-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-top: 28px;
+  padding: 23px 0;
+  border-top: 1px solid #262626;
+}
+
+.watch-bottom-mark {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.watch-bottom-icon {
+  width: 31px;
+  height: 31px;
+  font-size: 20px;
+}
+
+.watch-bottom-mark strong {
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.watch-bottom-mark p {
+  margin: 5px 0 0;
+  color: #888;
+  font-size: 12px;
+}
+
+.watch-home-link {
+  border: 0;
+  background: transparent;
+  color: #ccc;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.watch-home-link span {
+  margin-left: 5px;
+  color: #e50914;
+  font-size: 18px;
+}
+
+.watch-home-link:hover {
+  color: #fff;
+}
+
+/* ===== TABLET ===== */
+
+@media (max-width: 1000px) {
+  .watch-movie-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px 12px;
+  }
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 650px) {
+  .watch-page {
+    padding: 0 15px;
+  }
+
+  .watch-header {
+    min-height: 66px;
+    gap: 11px;
+  }
+
+  .watch-back-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+  }
+
+  .watch-brand {
+    gap: 7px;
+    font-size: 17px;
+    letter-spacing: 2px;
+  }
+
+  .watch-brand-icon {
+    width: 29px;
+    height: 29px;
+    font-size: 19px;
+  }
+
+  .watch-live-label {
+    gap: 5px;
+    font-size: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .watch-main {
+    padding-top: 20px;
+  }
+
+  .watch-heading {
+    margin-bottom: 14px;
+    padding: 21px 18px;
+    border-radius: 9px;
+  }
+
+  .watch-heading h1 {
+    font-size: 28px;
+    letter-spacing: -0.5px;
+  }
+
+  .watch-heading .watch-eyebrow {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .watch-movie-meta {
+    gap: 7px;
+    margin-top: 13px;
+  }
+
+  .watch-movie-meta > span:not(.watch-premium-tag) {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+
+  .watch-player-card {
+    border-radius: 8px;
+  }
+
+  .watch-video {
+    max-height: 55vh;
+  }
+
+  .watch-movie-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 12px;
+  }
+
+  .watch-card-info h3 {
+    font-size: 13px;
+  }
+
+  .watch-card-play {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .watch-section-heading h2 {
+    font-size: 22px;
+  }
+
+  .watch-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* ===== REDUCED MOTION ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  .watch-poster-wrap img,
+  .watch-card-play,
+  .watch-back-btn,
+  .watch-home-btn {
+    transition: none;
+  }
+}

@@ -1,0 +1,297 @@
+
+.apex-ai-widget {
+  position: relative;
+  z-index: 9999;
+}
+
+/* Floating button */
+.apex-ai-launcher {
+  position: fixed;
+  right: 26px;
+  bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  background: linear-gradient(135deg, #7955ed, #5433bf);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(89, 57, 196, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.apex-ai-launcher:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(89, 57, 196, 0.5);
+}
+
+.apex-ai-launcher-icon {
+  font-size: 23px;
+}
+
+/* Floating chat window */
+.apex-ai-window {
+  position: fixed;
+  right: 26px;
+  bottom: 24px;
+  width: 390px;
+  height: min(590px, calc(100vh - 48px));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #343448;
+  border-radius: 20px;
+  background: #15151f;
+  color: #f7f7fc;
+  box-shadow: 0 18px 65px rgba(0, 0, 0, 0.4);
+}
+
+/* Header */
+.apex-ai-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 17px;
+  background: #20202e;
+  border-bottom: 1px solid #343448;
+}
+
+.apex-ai-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.apex-ai-avatar,
+.apex-ai-welcome-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #8b6cff, #5433bf);
+  color: #fff;
+  font-size: 23px;
+}
+
+.apex-ai-header h3 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.apex-ai-header p {
+  margin: 5px 0 0;
+  color: #aaaabe;
+  font-size: 12px;
+}
+
+.apex-ai-close {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 10px;
+  background: #303044;
+  color: #fff;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.apex-ai-close:hover {
+  background: #48485e;
+}
+
+/* Messages */
+.apex-ai-messages {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+  padding: 17px;
+  scrollbar-width: thin;
+  scrollbar-color: #49445e transparent;
+}
+
+.apex-ai-welcome {
+  margin: auto 0;
+}
+
+.apex-ai-welcome-icon {
+  margin-bottom: 15px;
+}
+
+.apex-ai-welcome h3 {
+  margin: 0 0 8px;
+  font-size: 21px;
+}
+
+.apex-ai-welcome > p {
+  margin: 0;
+  color: #b2b2c6;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.apex-ai-suggestions {
+  display: grid;
+  gap: 9px;
+  margin-top: 22px;
+}
+
+.apex-ai-suggestions button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid #39384d;
+  border-radius: 11px;
+  background: #20202e;
+  color: #e4ddff;
+  text-align: left;
+  font-size: 12px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.apex-ai-suggestions button:hover {
+  border-color: #8b6cff;
+  background: #29253e;
+}
+
+.apex-ai-suggestions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Individual chat bubbles */
+.apex-ai-message {
+  max-width: 90%;
+  width: fit-content;
+  padding: 11px 13px;
+  border-radius: 13px;
+  overflow-wrap: anywhere;
+}
+
+.apex-ai-user-message {
+  align-self: flex-end;
+  background: #6545d6;
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+.apex-ai-bot-message {
+  align-self: flex-start;
+  background: #252533;
+  border: 1px solid #38384a;
+  border-bottom-left-radius: 4px;
+}
+
+.apex-ai-message-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 10px;
+  opacity: 0.75;
+}
+
+.apex-ai-message p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+
+.apex-ai-thinking {
+  color: #c2b6ff;
+}
+
+.apex-ai-error {
+  margin: 0 15px 10px;
+  padding: 10px;
+  border-radius: 9px;
+  background: #3b2028;
+  color: #ffb4bd;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+/* Input area */
+.apex-ai-form {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px;
+  border-top: 1px solid #343448;
+  background: #1b1b28;
+}
+
+.apex-ai-form input {
+  flex: 1;
+  width: 0;
+  min-width: 0;
+  padding: 12px 13px;
+  border: 1px solid #3b3b50;
+  border-radius: 12px;
+  outline: none;
+  background: #12121b;
+  color: #fff;
+  font-size: 14px;
+}
+
+.apex-ai-form input:focus {
+  border-color: #8b6cff;
+}
+
+.apex-ai-form input::placeholder {
+  color: #88889e;
+}
+
+.apex-ai-form button {
+  flex-shrink: 0;
+  width: 43px;
+  height: 43px;
+  border: 0;
+  border-radius: 12px;
+  background: #7955ed;
+  color: #fff;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.apex-ai-form button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.apex-ai-footer {
+  padding: 0 12px 10px;
+  background: #1b1b28;
+  color: #88889e;
+  text-align: center;
+  font-size: 10px;
+}
+
+@media (max-width: 480px) {
+  .apex-ai-launcher {
+    right: 15px;
+    bottom: 15px;
+    padding: 12px 16px;
+  }
+
+  .apex-ai-window {
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    width: auto;
+    height: auto;
+    border-radius: 16px;
+  }
+}

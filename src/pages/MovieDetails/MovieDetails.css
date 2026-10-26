@@ -1,0 +1,759 @@
+
+/* =========================================
+   APEX MOVIE DETAILS — MAIN PAGE
+========================================= */
+
+.movie-details-page {
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    padding-bottom: 60px;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(229, 9, 20, 0.15),
+            transparent 35%
+        ),
+        #0b0b0b;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.movie-details-page * {
+    box-sizing: border-box;
+}
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.details-back-btn {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    z-index: 10;
+    padding: 10px 18px;
+    background: rgba(0, 0, 0, 0.78);
+    border: 1px solid #555;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.details-back-btn:hover {
+    background: #e50914;
+    border-color: #e50914;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   MOVIE BANNER
+========================================= */
+
+.movie-details-image {
+    width: 100%;
+    height: 440px;
+    position: relative;
+    overflow: hidden;
+    background: #151515;
+}
+
+.movie-details-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center 25%;
+}
+
+.movie-details-image::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 65%;
+    pointer-events: none;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(11, 11, 11, 0.35) 35%,
+        #0b0b0b 100%
+    );
+}
+
+/* =========================================
+   PREMIUM BADGE
+========================================= */
+
+.details-premium-badge {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    z-index: 3;
+    padding: 10px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    background: #e50914;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 20px rgba(229, 9, 20, 0.25);
+}
+
+/* =========================================
+   MOVIE CONTENT
+========================================= */
+
+.movie-details-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1160px;
+    margin: -85px auto 0;
+    padding: 0 30px;
+}
+
+.movie-details-content h1 {
+    margin: 0 0 18px;
+    color: #fff;
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.7px;
+    overflow-wrap: anywhere;
+}
+
+/* =========================================
+   MOVIE META
+========================================= */
+
+.movie-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    margin-bottom: 22px;
+    color: #c7c7c7;
+    font-size: 14px;
+}
+
+.movie-meta span {
+    display: inline-flex;
+    align-items: center;
+}
+
+.movie-meta span:first-child {
+    color: #f5c518;
+    font-weight: 700;
+}
+
+.premium-meta {
+    color: #ff454d !important;
+    font-weight: 800;
+}
+
+.free-meta {
+    color: #66df91 !important;
+    font-weight: 700;
+}
+
+/* =========================================
+   MOVIE DESCRIPTION
+========================================= */
+
+.movie-details-description {
+    max-width: 760px;
+    margin: 0 0 28px;
+    color: #c7c7c7;
+    font-size: 16px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+/* =========================================
+   PLAY BUTTON
+========================================= */
+
+.movie-play-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 13px 27px;
+    border: none;
+    border-radius: 6px;
+    background: #e50914;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.movie-play-btn:hover:not(:disabled) {
+    background: #f6121d;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(229, 9, 20, 0.25);
+}
+
+.movie-play-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.movie-play-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* =========================================
+   PREMIUM ACCESS BOX
+========================================= */
+
+.premium-access-box {
+    width: 100%;
+    max-width: 500px;
+    margin: 24px 0;
+    padding: 24px;
+    border: 1px solid rgba(229, 9, 20, 0.7);
+    border-radius: 10px;
+    background: linear-gradient(
+        135deg,
+        #31090d 0%,
+        #1a1011 55%,
+        #151515 100%
+    );
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.premium-access-box h2 {
+    margin: 0 0 12px;
+    color: #ff454d;
+    font-size: 23px;
+}
+
+.premium-access-box p {
+    margin: 0 0 20px;
+    color: #ddd;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.movie-premium-btn {
+    min-height: 44px;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 5px;
+    background: #e50914;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.movie-premium-btn:hover {
+    background: #b20710;
+    transform: translateY(-1px);
+}
+
+/* =========================================
+   MOVIE RATING
+========================================= */
+
+.movie-rating-section {
+    margin-top: 32px;
+    padding: 22px 0;
+    border-bottom: 1px solid #252525;
+}
+
+.movie-rating-section h2 {
+    margin: 0 0 14px;
+    color: #fff;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.rating-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rating-star {
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #626262;
+    font-size: 34px;
+    line-height: 1.2;
+    cursor: pointer;
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.rating-star:hover {
+    color: #f5c518;
+    transform: scale(1.12);
+}
+
+.rating-star.active {
+    color: #f5c518;
+}
+
+.average-rating {
+    margin: 12px 0 0;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.rating-message {
+    margin: 9px 0 0;
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* =========================================
+   RELATED MOVIES SECTION
+========================================= */
+
+.related-movies-section {
+    width: 100%;
+    margin-top: 48px;
+}
+
+.related-movies-section h2 {
+    margin: 0 0 20px;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+/* =========================================
+   RELATED MOVIES HORIZONTAL LIST
+========================================= */
+
+.related-movies {
+    display: flex;
+    align-items: stretch;
+    gap: 18px;
+    width: 100%;
+    padding: 8px 5px 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #444 #151515;
+}
+
+.related-movies::-webkit-scrollbar {
+    height: 6px;
+}
+
+.related-movies::-webkit-scrollbar-track {
+    background: #151515;
+    border-radius: 10px;
+}
+
+.related-movies::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+}
+
+.related-movies::-webkit-scrollbar-thumb:hover {
+    background: #e50914;
+}
+
+/* =========================================
+   RELATED MOVIE CARD
+========================================= */
+
+.related-movie-card {
+    position: relative;
+    flex: 0 0 220px;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #292929;
+    border-radius: 8px;
+    background: #181818;
+    cursor: pointer;
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.related-movie-card:hover {
+    z-index: 2;
+    transform: translateY(-4px);
+    border-color: #555;
+    background: #222;
+}
+
+.related-movie-card:focus-visible {
+    outline: 2px solid #e50914;
+    outline-offset: 3px;
+}
+
+.related-premium-card {
+    border-color: rgba(229, 9, 20, 0.65);
+}
+
+.related-premium-card:hover {
+    border-color: #e50914;
+}
+
+/* =========================================
+   RELATED MOVIE POSTER
+========================================= */
+
+.related-poster-wrapper {
+    position: relative;
+    width: 100%;
+    height: 130px;
+    overflow: hidden;
+    background: #101010;
+}
+
+.related-poster-wrapper img,
+.related-movie-card > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.related-movie-card:hover .related-poster-wrapper img {
+    transform: scale(1.05);
+}
+
+/* =========================================
+   RELATED PREMIUM BADGE
+========================================= */
+
+.related-poster-wrapper .related-premium-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 2;
+    padding: 5px 8px;
+    border-radius: 4px;
+    background: #e50914;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+}
+
+/* =========================================
+   RELATED MOVIE INFORMATION
+========================================= */
+
+.related-movie-info {
+    padding: 12px;
+}
+
+.related-movie-info h3 {
+    margin: 0 0 9px;
+    overflow: hidden;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.4;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.related-movie-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    color: #aaa;
+    font-size: 12px;
+}
+
+.related-movie-meta span:first-child {
+    color: #f5c518;
+    font-weight: 700;
+}
+
+/* =========================================
+   LOADING / ERROR STATES
+========================================= */
+
+.movie-details-page > h1 {
+    margin: 0;
+    padding: 80px 30px;
+    color: #fff;
+    font-size: 28px;
+}
+
+.movie-details-page > p {
+    padding: 0 30px;
+    color: #ff777d;
+    line-height: 1.6;
+}
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+    .movie-details-image {
+        height: 320px;
+    }
+
+    .details-back-btn {
+        top: 18px;
+        left: 20px;
+        padding: 9px 15px;
+    }
+
+    .details-premium-badge {
+        top: 18px;
+        right: 18px;
+        padding: 8px 10px;
+        font-size: 10px;
+    }
+
+    .movie-details-content {
+        margin-top: -60px;
+        padding: 0 22px;
+    }
+
+    .movie-details-content h1 {
+        font-size: 33px;
+    }
+
+    .movie-meta {
+        gap: 10px 15px;
+        font-size: 13px;
+    }
+
+    .movie-details-description {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .movie-rating-section {
+        margin-top: 25px;
+    }
+
+    .movie-rating-section h2 {
+        font-size: 21px;
+    }
+
+    .rating-star {
+        font-size: 31px;
+    }
+
+    .related-movies-section {
+        margin-top: 38px;
+    }
+
+    .related-movies-section h2 {
+        font-size: 22px;
+    }
+
+    .related-movie-card {
+        flex-basis: 185px;
+    }
+
+    .related-poster-wrapper {
+        height: 110px;
+    }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 480px) {
+    .movie-details-page {
+        padding-bottom: 40px;
+    }
+
+    .movie-details-image {
+        height: 250px;
+    }
+
+    .details-back-btn {
+        top: 14px;
+        left: 14px;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .details-premium-badge {
+        top: 14px;
+        right: 12px;
+        padding: 7px 9px;
+        font-size: 9px;
+        letter-spacing: 0.5px;
+    }
+
+    .movie-details-content {
+        margin-top: -42px;
+        padding: 0 16px;
+    }
+
+    .movie-details-content h1 {
+        margin-bottom: 13px;
+        font-size: 27px;
+        letter-spacing: -0.3px;
+    }
+
+    .movie-meta {
+        gap: 9px 12px;
+        margin-bottom: 17px;
+        font-size: 12px;
+    }
+
+    .movie-details-description {
+        margin-bottom: 22px;
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .movie-play-btn {
+        width: 100%;
+        min-height: 46px;
+        padding: 12px 16px;
+        font-size: 15px;
+    }
+
+    .premium-access-box {
+        margin: 20px 0;
+        padding: 18px;
+    }
+
+    .premium-access-box h2 {
+        font-size: 20px;
+    }
+
+    .premium-access-box p {
+        font-size: 13px;
+    }
+
+    .movie-premium-btn {
+        width: 100%;
+    }
+
+    .movie-rating-section {
+        margin-top: 22px;
+        padding: 18px 0;
+    }
+
+    .movie-rating-section h2 {
+        font-size: 19px;
+    }
+
+    .rating-buttons {
+        gap: 6px;
+    }
+
+    .rating-star {
+        font-size: 29px;
+    }
+
+    .average-rating,
+    .rating-message {
+        font-size: 12px;
+    }
+
+    .related-movies-section {
+        margin-top: 32px;
+    }
+
+    .related-movies-section h2 {
+        margin-bottom: 15px;
+        font-size: 20px;
+    }
+
+    .related-movies {
+        gap: 12px;
+        padding: 5px 3px 16px;
+    }
+
+    .related-movie-card {
+        flex-basis: 155px;
+    }
+
+    .related-poster-wrapper {
+        height: 92px;
+    }
+
+    .related-movie-info {
+        padding: 9px;
+    }
+
+    .related-movie-info h3 {
+        font-size: 13px;
+    }
+
+    .related-movie-meta {
+        gap: 7px;
+        font-size: 11px;
+    }
+}
+
+/* =========================================
+   EXTRA SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+    .movie-details-image {
+        height: 220px;
+    }
+
+    .movie-details-content {
+        padding: 0 12px;
+    }
+
+    .movie-details-content h1 {
+        font-size: 24px;
+    }
+
+    .details-premium-badge {
+        font-size: 8px;
+    }
+
+    .related-movie-card {
+        flex-basis: 140px;
+    }
+
+    .related-poster-wrapper {
+        height: 85px;
+    }
+}
+
+/* =========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .movie-details-page *,
+    .movie-details-page *::before,
+    .movie-details-page *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}

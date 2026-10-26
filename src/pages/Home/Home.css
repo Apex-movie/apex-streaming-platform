@@ -1,0 +1,994 @@
+
+/* ========================================
+   APEX HOME PAGE
+======================================== */
+
+.home {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: clip;
+  background: #000;
+  color: #fff;
+}
+
+.home *,
+.home *::before,
+.home *::after {
+  box-sizing: border-box;
+}
+
+/* ========================================
+   HERO SECTION
+======================================== */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  background: #000;
+}
+
+.banner-image,
+.trending-banner {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.banner-image {
+  z-index: 0;
+}
+
+.trending-banner {
+  z-index: 1;
+  transition: opacity 0.5s ease;
+}
+
+/* Hero gradients */
+
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 65%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.25) 35%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  pointer-events: none;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 65%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.35),
+    transparent
+  );
+  pointer-events: none;
+}
+
+/* ========================================
+   HERO CONTENT
+======================================== */
+
+.hero-content {
+  position: absolute;
+  z-index: 3;
+  bottom: 15%;
+  left: 6%;
+  width: 500px;
+  max-width: 45%;
+  color: #fff;
+}
+
+.movie-title {
+  margin: 0 0 12px;
+  color: #fff;
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.movie-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+  color: #ddd;
+  font-size: 15px;
+}
+
+.hero-description {
+  display: -webkit-box;
+  max-width: 500px;
+  margin: 0 0 25px;
+  overflow: hidden;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* ========================================
+   HERO BUTTONS
+======================================== */
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.play-button,
+.info-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.play-button {
+  background: #fff;
+  color: #000;
+}
+
+.play-button:hover {
+  background: #e50914;
+  color: #fff;
+}
+
+.info-button {
+  background: rgba(109, 109, 110, 0.8);
+  color: #fff;
+}
+
+.info-button:hover {
+  background: #e50914;
+  color: #fff;
+}
+
+.play-button:focus-visible,
+.info-button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+/* ========================================
+   HERO SLIDER ARROWS
+======================================== */
+
+.hero-arrow {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 60px;
+  padding: 0;
+  border: none;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background 0.2s ease;
+}
+
+.hero-arrow:hover {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.hero-arrow:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.hero-left {
+  left: 18px;
+}
+
+.hero-right {
+  right: 18px;
+}
+
+/* ========================================
+   HERO SLIDER DOTS
+======================================== */
+
+.hero-dots {
+  position: absolute;
+  z-index: 4;
+  bottom: 35px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transform: translateX(-50%);
+}
+
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition:
+    width 0.3s ease,
+    background 0.3s ease;
+}
+
+.hero-dot.active {
+  width: 28px;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.hero-dot:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+/* ========================================
+   SEARCH SECTION
+======================================== */
+
+.home-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 30px 5% 10px;
+  background: #000;
+}
+
+.home-search input {
+  width: 500px;
+  max-width: 100%;
+  height: 46px;
+  padding: 0 16px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  outline: none;
+  background: #222;
+  color: #fff;
+  font-size: 16px;
+  transition: border-color 0.2s ease;
+}
+
+.home-search input::placeholder {
+  color: #aaa;
+}
+
+.home-search input:focus {
+  border-color: #e50914;
+}
+
+/* ========================================
+   FIXED MESSAGES / SUPPORT BUTTON
+   Always stays at bottom-right of screen
+======================================== */
+
+.home-support-actions {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: auto;
+  padding: 0;
+  background: transparent;
+}
+
+.home-messages-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 48px;
+  padding: 14px 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 30px;
+
+  background: #e50914;
+  color: #fff;
+
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.home-messages-button:hover {
+  background: #b80710;
+  box-shadow: 0 7px 24px rgba(229, 9, 20, 0.3);
+  transform: translateY(-2px);
+}
+
+.home-messages-button:active {
+  transform: translateY(0);
+}
+
+.home-messages-button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.home-messages-button span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* ========================================
+   WATCH HISTORY SECTION
+======================================== */
+
+.home-watch-history {
+  width: 100%;
+  padding: 32px 4% 24px;
+  background: #000;
+  color: #fff;
+}
+
+.watch-history-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.watch-history-heading h2 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.watch-history-heading p {
+  margin: 6px 0 0;
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.watch-history-view-all {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+  min-height: 38px;
+  padding: 9px 14px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background: transparent;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.watch-history-view-all:hover {
+  border-color: #e50914;
+  background: rgba(229, 9, 20, 0.1);
+  color: #ff424b;
+}
+
+.watch-history-view-all:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.watch-history-message {
+  padding: 18px 0;
+  color: #bbb;
+  font-size: 14px;
+}
+
+/* Empty watch history */
+
+.watch-history-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+  padding: 25px 16px;
+  border: 1px solid #262626;
+  border-radius: 8px;
+  background: #101010;
+  text-align: center;
+}
+
+.history-empty-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 10px;
+  border: 1px solid #444;
+  border-radius: 50%;
+  color: #e50914;
+  font-size: 22px;
+}
+
+.watch-history-empty h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.watch-history-empty p {
+  margin: 0;
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ========================================
+   WATCH HISTORY CARDS
+======================================== */
+
+.watch-history-list {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.watch-history-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #222;
+  border-radius: 7px;
+  background: #111;
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.watch-history-card:hover {
+  border-color: #555;
+  transform: translateY(-3px);
+}
+
+.watch-history-poster-button {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: none;
+  background: #181818;
+  cursor: pointer;
+}
+
+.watch-history-poster-button img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.watch-history-card:hover .watch-history-poster-button img {
+  transform: scale(1.04);
+}
+
+.watch-history-poster-button:focus-visible {
+  outline: 2px solid #e50914;
+  outline-offset: -2px;
+}
+
+.history-poster-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-size: 17px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease;
+}
+
+.watch-history-card:hover .history-poster-play,
+.watch-history-poster-button:focus-visible .history-poster-play {
+  opacity: 1;
+}
+
+/* Poster information */
+
+.watch-history-card-info {
+  padding: 12px;
+}
+
+.watch-history-card-info h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.watch-history-year {
+  margin: 6px 0 10px;
+  color: #aaa;
+  font-size: 13px;
+}
+
+/* Watch again button */
+
+.watch-again-button {
+  width: 100%;
+  min-height: 38px;
+  margin-top: 10px;
+  padding: 9px 8px;
+  border: none;
+  border-radius: 4px;
+  background: #e50914;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.watch-again-button:hover {
+  background: #b80710;
+}
+
+.watch-again-button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+/* ========================================
+   MOVIE ROWS
+======================================== */
+
+.more-cards {
+  width: 100%;
+  min-width: 0;
+  padding-bottom: 10px;
+  background: #000;
+}
+
+/* ========================================
+   RESPONSIVE: LAPTOPS
+======================================== */
+
+@media (max-width: 1200px) {
+  .watch-history-list {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .hero-content {
+    max-width: 55%;
+  }
+}
+
+/* ========================================
+   RESPONSIVE: TABLETS
+======================================== */
+
+@media (max-width: 1000px) {
+  .hero {
+    height: 85vh;
+    min-height: 540px;
+  }
+
+  .hero-content {
+    bottom: 12%;
+    left: 5%;
+    width: 450px;
+    max-width: 65%;
+  }
+
+  .movie-title {
+    font-size: 38px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .watch-history-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .home-watch-history {
+    padding-right: 4%;
+    padding-left: 4%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 78vh;
+    min-height: 500px;
+  }
+
+  .hero-content {
+    bottom: 12%;
+    max-width: 72%;
+  }
+
+  .movie-title {
+    font-size: 34px;
+  }
+
+  .hero::before {
+    width: 85%;
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.35),
+      transparent
+    );
+  }
+
+  .watch-history-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .watch-history-card-info {
+    padding: 10px;
+  }
+}
+
+/* ========================================
+   RESPONSIVE: MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .hero {
+    height: 75vh;
+    min-height: 480px;
+    max-height: 700px;
+  }
+
+  .banner-image,
+  .trending-banner {
+    object-position: center;
+  }
+
+  .hero::after {
+    height: 75%;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.3) 25%,
+      rgba(0, 0, 0, 0.95) 100%
+    );
+  }
+
+  .hero::before {
+    width: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.55),
+      transparent
+    );
+  }
+
+  .hero-content {
+    right: 5%;
+    bottom: 12%;
+    left: 5%;
+    width: auto;
+    max-width: none;
+  }
+
+  .movie-title {
+    margin-bottom: 9px;
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .movie-meta {
+    gap: 7px;
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+
+  .hero-description {
+    max-width: 100%;
+    margin-bottom: 18px;
+    font-size: 13px;
+    line-height: 1.5;
+    -webkit-line-clamp: 3;
+  }
+
+  .hero-buttons {
+    gap: 9px;
+  }
+
+  .play-button,
+  .info-button {
+    min-height: 40px;
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+
+  .hero-arrow {
+    width: 32px;
+    height: 45px;
+    font-size: 18px;
+  }
+
+  .hero-left {
+    left: 6px;
+  }
+
+  .hero-right {
+    right: 6px;
+  }
+
+  .hero-dots {
+    bottom: 18px;
+    gap: 7px;
+  }
+
+  .hero-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .hero-dot.active {
+    width: 22px;
+  }
+
+  /* Search */
+
+  .home-search {
+    padding: 20px 5% 8px;
+  }
+
+  .home-search input {
+    width: 100%;
+    height: 44px;
+    padding: 0 13px;
+    font-size: 14px;
+  }
+
+  /* Fixed support button */
+
+  .home-support-actions {
+    position: fixed;
+    right: 14px;
+    bottom: 16px;
+    left: auto;
+    z-index: 9999;
+
+    justify-content: center;
+    width: auto;
+    padding: 0;
+    background: transparent;
+  }
+
+  .home-messages-button {
+    width: auto;
+    min-height: 46px;
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+
+  /* Watch history */
+
+  .home-watch-history {
+    padding: 25px 5% 18px;
+  }
+
+  .watch-history-heading {
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .watch-history-heading h2 {
+    font-size: 20px;
+  }
+
+  .watch-history-heading p {
+    font-size: 12px;
+  }
+
+  .watch-history-view-all {
+    min-height: 35px;
+    gap: 5px;
+    padding: 7px 9px;
+    font-size: 12px;
+  }
+
+  .watch-history-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .watch-history-card-info {
+    padding: 9px;
+  }
+
+  .watch-history-card-info h3 {
+    font-size: 13px;
+  }
+
+  .watch-history-year {
+    font-size: 12px;
+  }
+
+  .watch-again-button {
+    min-height: 36px;
+    padding: 8px 5px;
+    font-size: 12px;
+  }
+
+  .watch-history-empty {
+    min-height: 140px;
+    padding: 20px 12px;
+  }
+
+  .watch-history-empty h3 {
+    font-size: 15px;
+  }
+
+  .watch-history-empty p {
+    font-size: 12px;
+  }
+
+  .history-empty-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
+/* ========================================
+   RESPONSIVE: SMALL MOBILE
+======================================== */
+
+@media (max-width: 380px) {
+  .hero {
+    min-height: 450px;
+  }
+
+  .movie-title {
+    font-size: 24px;
+  }
+
+  .hero-description {
+    font-size: 12px;
+  }
+
+  .play-button,
+  .info-button {
+    gap: 6px;
+    padding: 9px 11px;
+    font-size: 12px;
+  }
+
+  .watch-history-heading h2 {
+    font-size: 18px;
+  }
+
+  .watch-history-view-all {
+    padding: 7px;
+    font-size: 11px;
+  }
+
+  .watch-history-list {
+    gap: 9px;
+  }
+
+  .watch-history-card-info {
+    padding: 8px;
+  }
+
+  .home-support-actions {
+    right: 10px;
+    bottom: 12px;
+  }
+
+  .home-messages-button {
+    min-height: 44px;
+    padding: 11px 13px;
+    font-size: 12px;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .trending-banner,
+  .play-button,
+  .info-button,
+  .hero-arrow,
+  .hero-dot,
+  .watch-history-card,
+  .watch-history-poster-button img,
+  .history-poster-play,
+  .watch-history-view-all,
+  .watch-again-button,
+  .home-messages-button {
+    transition: none;
+  }
+
+  .watch-history-card:hover {
+    transform: none;
+  }
+
+  .home-messages-button:hover {
+    transform: none;
+  }
+}
