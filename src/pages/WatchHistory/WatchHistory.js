@@ -46,7 +46,6 @@ const WatchHistory = () => {
         }
 
         const data = await response.json();
-
         setHistory(Array.isArray(data) ? data : []);
       } catch (err) {
         setError(
@@ -82,28 +81,35 @@ const WatchHistory = () => {
     event.currentTarget.style.visibility = "hidden";
   };
 
-  if (loading) {
-    return (
-      <div className="watch-history-page">
-        <p className="history-status">
-          Loading your watch history...
-        </p>
-      </div>
-    );
-  }
-
   return (
     <div className="watch-history-page">
       <div className="watch-history-header">
+        <button
+          type="button"
+          className="history-home-btn"
+          onClick={() => navigate("/")}
+        >
+          <span aria-hidden="true">←</span>
+          Return Home
+        </button>
+
         <h1>Watch History</h1>
         <p>All the movies you have watched, in one place.</p>
       </div>
 
-      {error && (
+      {loading && (
+        <p className="history-status" role="status">
+          Loading your watch history...
+        </p>
+      )}
+
+      {!loading && error && (
         <div className="history-error" role="alert">
+          <h2>Unable to Load History</h2>
           <p>{error}</p>
 
           <button
+            type="button"
             className="history-browse-btn"
             onClick={() => window.location.reload()}
           >
@@ -112,14 +118,19 @@ const WatchHistory = () => {
         </div>
       )}
 
-      {!error && history.length === 0 && (
+      {!loading && !error && history.length === 0 && (
         <div className="history-empty">
+          <div className="history-empty-icon" aria-hidden="true">
+            ◷
+          </div>
+
           <h2>Your Watch History Is Empty</h2>
           <p>
             The movies you watch will appear here.
           </p>
 
           <button
+            type="button"
             onClick={() => navigate("/")}
             className="history-browse-btn"
           >
@@ -128,7 +139,7 @@ const WatchHistory = () => {
         </div>
       )}
 
-      {!error && history.length > 0 && (
+      {!loading && !error && history.length > 0 && (
         <div className="history-grid">
           {history.map((item) => {
             const movie = item.movie;
@@ -182,14 +193,13 @@ const WatchHistory = () => {
                   <p className="history-watched-date">
                     Last watched:{" "}
                     {item.watchedAt
-                      ? new Date(item.watchedAt).toLocaleDateString(
-                          "en-US",
-                          {
-                            year: "numeric",
-                            month: "short",
-                            day: "numeric",
-                          }
-                        )
+                      ? new Date(
+                          item.watchedAt
+                        ).toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "short",
+                          day: "numeric",
+                        })
                       : "Date unavailable"}
                   </p>
 

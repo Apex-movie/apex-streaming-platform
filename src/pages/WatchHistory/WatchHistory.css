@@ -1,6 +1,7 @@
 
 .watch-history-page {
   min-height: 100vh;
+  box-sizing: border-box;
   padding: 110px 5% 50px;
   background: #0b0b0f;
   color: #fff;
@@ -8,6 +9,44 @@
 
 .watch-history-header {
   margin-bottom: 30px;
+}
+
+.history-home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin: 0 0 24px;
+  padding: 11px 17px;
+  border: 1px solid #393943;
+  border-radius: 8px;
+  background: #191920;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.history-home-btn span {
+  font-size: 19px;
+  line-height: 1;
+}
+
+.history-home-btn:hover {
+  background: #292932;
+  border-color: #e50914;
+  transform: translateX(-2px);
+}
+
+.history-home-btn:focus-visible,
+.history-browse-btn:focus-visible,
+.history-watch-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
 }
 
 .watch-history-header h1 {
@@ -27,8 +66,25 @@
   color: #ddd;
 }
 
+.history-status {
+  text-align: center;
+}
+
 .history-error {
   color: #ff7777;
+  text-align: center;
+  padding: 35px 20px;
+  border: 1px solid #47282c;
+  border-radius: 14px;
+  background: #171115;
+}
+
+.history-error h2 {
+  margin-top: 0;
+}
+
+.history-error p {
+  overflow-wrap: anywhere;
 }
 
 .history-empty {
@@ -37,6 +93,16 @@
   border: 1px solid #292932;
   border-radius: 14px;
   background: #121218;
+}
+
+.history-empty-icon {
+  margin-bottom: 15px;
+  color: #e50914;
+  font-size: 48px;
+}
+
+.history-empty h2 {
+  margin: 0 0 10px;
 }
 
 .history-empty p {
@@ -52,6 +118,7 @@
   font-weight: 700;
   padding: 11px 16px;
   cursor: pointer;
+  transition: background 0.2s ease;
 }
 
 .history-browse-btn {
@@ -60,7 +127,10 @@
 
 .history-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(230px, 1fr)
+  );
   gap: 24px;
 }
 
@@ -71,12 +141,19 @@
   border: 1px solid #292932;
   border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.2s, border-color 0.2s;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .history-card:hover {
   transform: translateY(-4px);
   border-color: #e50914;
+}
+
+.history-card:focus-visible {
+  outline: 2px solid #e50914;
+  outline-offset: 3px;
 }
 
 .history-poster {
@@ -87,6 +164,16 @@
   background: #222;
 }
 
+.history-poster-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  box-sizing: border-box;
+  color: #aaa;
+  text-align: center;
+}
+
 .history-card-info {
   padding: 15px;
 }
@@ -94,6 +181,7 @@
 .history-card-info h3 {
   margin: 0 0 8px;
   font-size: 18px;
+  overflow-wrap: anywhere;
 }
 
 .history-card-info p {
@@ -121,6 +209,11 @@
     padding: 95px 16px 35px;
   }
 
+  .history-home-btn {
+    margin-bottom: 20px;
+    padding: 10px 14px;
+  }
+
   .history-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
@@ -141,5 +234,23 @@
   .history-watch-btn {
     padding: 10px 7px;
     font-size: 12px;
+  }
+
+  .history-empty {
+    padding: 45px 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .history-home-btn,
+  .history-card,
+  .history-browse-btn,
+  .history-watch-btn {
+    transition: none;
+  }
+
+  .history-card:hover,
+  .history-home-btn:hover {
+    transform: none;
   }
 }
