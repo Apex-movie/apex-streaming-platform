@@ -3,10 +3,10 @@ import React, { useState, useRef, useEffect } from 'react';
 import './AdminAIChat.css';
 
 const suggestions = [
-  'Total users kitne hain?',
-  'Monthly aur yearly subscribers kitne hain?',
-  'Sabse zyada views wali movie kaunsi hai?',
-  'Last 30 days mein kitne naye users aaye?'
+  'How many total users are registered?',
+  'How many monthly and yearly subscribers do we have?',
+  'Which movie has the highest number of views?',
+  'How many new users joined in the last 30 days?'
 ];
 
 export default function AdminAIChat() {
@@ -27,6 +27,7 @@ export default function AdminAIChat() {
     if (!prompt || loading) return;
 
     const previousMessages = messages;
+
     const nextMessages = [
       ...previousMessages,
       { role: 'user', content: prompt }
@@ -41,7 +42,6 @@ export default function AdminAIChat() {
       const token = localStorage.getItem('token');
 
       const response = await fetch(
-        // 'https://apex-streaming-backend.onrender.com/api/admin-ai/ask',
         'https://apex-streaming-backend.onrender.com/api/admin-ai/ask',
         {
           method: 'POST',
@@ -80,7 +80,7 @@ export default function AdminAIChat() {
 
   return (
     <div className="apex-ai-widget">
-      {/* Floating launcher */}
+
       {!isOpen && (
         <button
           type="button"
@@ -94,7 +94,6 @@ export default function AdminAIChat() {
         </button>
       )}
 
-      {/* Floating chat window */}
       {isOpen && (
         <section
           className="apex-ai-window"
@@ -106,7 +105,7 @@ export default function AdminAIChat() {
               <div className="apex-ai-avatar">✦</div>
               <div>
                 <h3>APEX AI Assistant</h3>
-                <p>Ask about your platform</p>
+                <p>Ask me anything about your platform</p>
               </div>
             </div>
 
@@ -122,12 +121,16 @@ export default function AdminAIChat() {
           </header>
 
           <div className="apex-ai-messages" aria-live="polite">
+
             {messages.length === 0 && (
               <div className="apex-ai-welcome">
                 <div className="apex-ai-welcome-icon">✦</div>
-                <h3>Hi, Admin! 👋</h3>
+
+                <h3>Hello, Admin! 👋</h3>
+
                 <p>
-                  Ask me about your users, subscriptions, or most-viewed movies.
+                  I'm your APEX AI Assistant. Ask me anything about
+                  your users, subscriptions, revenue, or most-viewed movies.
                 </p>
 
                 <div className="apex-ai-suggestions">
@@ -158,6 +161,7 @@ export default function AdminAIChat() {
                 <span className="apex-ai-message-label">
                   {message.role === 'user' ? 'You' : 'APEX AI'}
                 </span>
+
                 <p>{message.content}</p>
               </div>
             ))}
@@ -166,7 +170,7 @@ export default function AdminAIChat() {
               <div className="apex-ai-message apex-ai-bot-message">
                 <span className="apex-ai-message-label">APEX AI</span>
                 <p className="apex-ai-thinking">
-                  Analyzing your database...
+                  Analyzing your data...
                 </p>
               </div>
             )}
@@ -190,7 +194,7 @@ export default function AdminAIChat() {
             <input
               value={question}
               onChange={event => setQuestion(event.target.value)}
-              placeholder="Ask anything..."
+              placeholder="Type your question here..."
               aria-label="Ask APEX AI a question"
               maxLength={2000}
               disabled={loading}
